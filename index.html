@@ -9,7 +9,7 @@
       function createItem(text, link){
         var item = document.createElement("li");
         var div = document.createElement("div");
-        div.onClick = function(){window.location = link;};
+        div.onclick = function(){window.location = link;};
         div.textContent = text;
         item.appendChild(div);
         ul.appendChild(item);
