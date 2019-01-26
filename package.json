@@ -1,0 +1,26 @@
+{
+  "name": "solution",
+  "version": "1.0.0",
+  "description": "Solutions for simple problems",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc",
+    "tscinit": "tsc --init",
+    "runmac": "open http://127.0.0.1:8125/ && node NanoServe/serve.js",
+    "devmac": "npm run tsc && npm run runmac"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alper-batioglu/Solution.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alper-batioglu/Solution/issues"
+  },
+  "homepage": "https://github.com/alper-batioglu/Solution#readme",
+  "devDependencies": {
+    "typescript": "^3.2.4"
+  }
+}
