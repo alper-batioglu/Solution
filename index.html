@@ -4,15 +4,19 @@
     <ul>
       <li>FN lock with MS Remote desktop client</li>
     </ul>
-  </body>  
+    <script>
+      var ul = document.getElementsByTagName("ul");
+
+      function createItem(text, link){
+        var item = document.createElement("li");
+        var div = document.createElement("div");
+        div.onClick = function(){window.location = link;};
+        div.textContent = text;
+        item.appendChild(div);
+        ul.appendCilhd(item);
+      }
+      
+      createItem("FN lock with MS Remote desktop client", "./Mac/FnLock.html");
+    </script>
+  </body>
 </html>
-
-var ul = document.getElementsByTagName("ul");
-
-
-var item = document.createElement("li");
-var div = document.createElement("div");
-div.onClick = function(){window.location = "./Mac/FnLock.html";};
-div.textContent = "FN lock with MS Remote desktop client";
-item.appendChild(div);
-ul.appendCilhd(item);
