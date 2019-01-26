@@ -1,21 +1,9 @@
 <html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
   <body>
     <h1>Hello world</h1>
-    <ul>
-    </ul>
-    <script>
-      var ul = document.getElementsByTagName("ul")[0];
-
-      function createItem(text, link){
-        var item = document.createElement("li");
-        var div = document.createElement("div");
-        div.onclick = function(){window.location = link;};
-        div.textContent = text;
-        item.appendChild(div);
-        ul.appendChild(item);
-      }
-      
-      createItem("FN lock with MS Remote desktop client", "./Mac/FnLock.html");
-    </script>
+    <script src="App.js"></script>
   </body>
 </html>
