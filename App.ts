@@ -32,6 +32,7 @@ const fnLockItem = new Item("FN lock with MS Remote desktop client", "./Mac/FnLo
 itemHolder.AddItem(fnLockItem);
 itemHolder.AddItem(new Item("Docker cheet sheet", "./Docker/cheetsheet.html"));
 itemHolder.AddItem(new Item("Bash solutions", "./Bash/Bash.html"));
+itemHolder.AddItem(new Item("Git solutions", "./Git/Git.html"));
 
 document.body.appendChild( itemHolder.Render());
 
