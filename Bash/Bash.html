@@ -2,5 +2,12 @@
     <body>
         <h2>fix path for local npm installs</h2>
         <div>export PATH=$PATH:./node_modules/.bin/</div>
+        <h2>grep exclude</h2>
+        <div>... | grep -v node_modules</div>
+        <h2>pass arguments from screen out to argv ex: ls -la</h2>
+        <div>echo "-la" | xargs ls</div>
+        <h2>delete files with extension excluding patern</h2>
+        <div>find . -name "*.js"  -printf "%p\n" | grep -v node_modules | xargs rm</div>
+        
     </body>
 </html>
