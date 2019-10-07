@@ -1,0 +1,851 @@
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+html, body {
+  font-family: 'open sans', 'sans serif';
+  color: #4e5983;
+}
+
+* {
+    box-sizing: border-box;
+}
+ul {
+    margin: 0;
+    padding: 10px;
+}
+ul li {
+    margin: 0;
+    list-style: none;
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+
+.clearfix:after {
+  clear: both;
+}
+.inputWrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    padding: 5px 0;
+    position: relative;
+}
+.inputWrapper label {
+    width: 100%;
+    display: block;
+}
+.editModeWrapper {
+    margin-top: -10px;
+}
+.editorWrapper button {
+    display: inline-block;
+    margin-right: 10px;
+    width: 40px;
+}
+.editorWrapper button.active {
+    display: inline-block;
+    margin-right: 10px;
+    width: 40px;
+    background: #fafbfc;
+    color: #4e5983;
+    border: 0;
+}
+.tableEditMode {
+    display: inline-block;
+    opacity: 0.15;
+}
+.tableEditMode.active {
+    display: inline-block;
+    opacity: 1;
+}
+.tableEditMode li {
+    display: inline-block;
+    margin-right: 10px;
+}
+input {
+    background: #fafbfc;
+    border: 1px solid #c1dced;
+    border-radius: 5px;
+}
+input[type="text"] {
+    padding: 8px 12px;
+    width: 100%;
+    height: 36px;
+    flex-grow: 1;
+}
+.inputSmall[type="text"] {
+    height: 30px;
+    font-size: 80%;
+}
+
+input::placeholder {
+    color: #c1dced;
+}
+label {
+    font-size: 80%;
+    padding: 0  8px;
+}
+input:focus {
+    outline: 0;
+    border-color: #00c3b3;
+}
+select {
+    background: #fafbfc;
+    border: 1px solid #c1dced;
+    border-radius: 5px;
+    font-size: 80%;
+}
+select:focus {
+    outline: 0;
+    border-color: #00c3b3;
+}
+button {
+    border-radius: 5px;
+    padding: 8px 12px;
+    width: 100%;
+    height: 36px;
+}
+button:focus {
+    outline: 0;
+}
+.buttonMini {
+    border-radius: 5px;
+    padding: 2px 6px;
+    height: 18px;
+    font-size: 50%;
+    text-decoration: none;
+    font-weight: bold;
+}
+.props .buttonMini {
+    position: absolute;
+    opacity: 0.4;
+    right: 0;
+    top: 5px;
+}
+.buttonMini.active {
+    opacity: 1;
+}
+.buttonSmall {
+    height: 30px;
+    font-size: 80%;
+    padding: 6px 8px;
+}
+
+.greenBtn {background: #00c3b3;border: 1px solid #00c3b3;color: #ffffff;}
+.redBtn {background: #ff6f79;border: 1px solid #ff6f79;color: #ffffff;}
+.blueBtn {background: #0492f2;border: 1px solid #0492f2;color: #ffffff;}
+.whiteBtn {background: #ffffff;border: 1px solid #c1dced;color: #4e5983;}
+.green {color: #00c3b3 !important;}
+.red {color: #ff6f79 !important;}
+.blue {color: #0492f2 !important;}
+.white {color: #ffffff !important;}
+.gray {color: #4e5983 !important;}
+
+.infoIcn {
+    cursor: hand;
+    cursor: pointer;
+}
+
+button:hover {
+    filter: contrast(0.85)
+}
+.editor {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    background: #e1eef6;
+    display: block;
+}
+header {
+    height: 50px;
+    padding: 10px 15px;
+    width: 100%;
+    display: block;
+    font-size: 80%;
+}
+header i {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.contentBlock header i.errorCounter {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 99px; 
+    background: #00c3b3;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 4px;
+    font-style: normal;
+    font-size: 16px;
+}
+
+
+/* Checkbox */
+
+/* Customize the label (the container) */
+.checkWrapper {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 80%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkWrapper input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fafbfc;
+  border-radius: 99px;
+  border: 1px solid #c1dced;
+}
+
+/* On mouse-over, add a grey background color */
+.checkWrapper:hover input ~ .checkmark {
+  filter: contrast(0.9)
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkWrapper input:checked ~ .checkmark {
+  background-color: #2196F3;
+  border-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkWrapper input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkWrapper .checkmark:after {
+  left: 6px;
+  top: 3px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* Pop up */
+
+.miniPopUp {
+    position: absolute;
+    top: 50px;
+    width: 300px;
+    padding: 15px;
+    background: #ffffff;
+    z-index: 11;
+}
+.miniPopUp .checkList li {
+    border-top: 1px solid #e1eef6;
+    padding: 10px 8px 0 8px !important;
+}
+.miniPopUp .checkList li i {
+    position: absolute;
+    top: 12px;
+    right: 4px;
+}
+.bigPopUp {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 18;
+    background: rgba(0,0,0,0.65);
+}
+.bigPopUp header, .bigPopUp .content {
+    width: calc(100% - 600px);
+    margin: 0 auto;
+}
+.bigPopUp .content {
+    background: #e1eef6; 
+    overflow: auto;
+    min-height: 500px; 
+    max-height: calc(100vh - 100px);
+}
+.bigPopUp .content > ul {
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px solid #e1eef6;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.bigPopUp .content ul.sub {
+    padding: 0 0 0 20px;
+    margin: 0;
+}
+.bigPopUp .content li {
+    padding: 5px 0;
+}
+.bigPopUp .content ul.sub li {
+    border-bottom: 1px solid #e1eef6;
+}
+.bigPopUp .content ul.sub li:last-child {
+    border-bottom: 0;
+}
+.bigPopUp .content table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: separate;
+    font-size: 80%;
+}
+.bigPopUp .content table th {
+    padding: 10px;
+    border-right: 1px solid #ffffff;
+    background: #e1eef6;
+}
+.bigPopUp .content table th:last-child {
+    border-right: 0;
+}
+.bigPopUp .content table td {
+    padding: 10px;
+    border: 1px solid #e1eef6;
+    border-left: 0;
+}
+.bigPopUp .content table td:first-child {
+    border-left: 1px solid #e1eef6;
+}
+.bigPopUp .content table tr {
+    border: 1px solid #e1eef6;
+}
+.bigPopUp .content li.tip {
+    background: #e1eef6;
+    padding: 5px 15px;;
+}
+.bigPopUp .content h4 {
+    margin: 5px 0; 
+}
+.bigPopUp .content .sub h4 {
+    font-size: 80%;
+    display: inline-block;
+    width: 30%;
+    margin: 0;
+}
+.bigPopUp .content p {
+    margin: 5px 0;
+    font-size: 80%;
+}
+.bigPopUp .content .sub p {
+    display: inline-block;
+    width: 65%;
+    margin: 0;
+}
+.bigPopUp header {
+    background: #4e5983;
+    color: #ffffff;
+    font-weight: 600;
+}   
+.bigPopUp header span {
+    line-height: 30px;
+}
+.bigPopUp header i {
+    font-size: 14px;
+    text-align: center;
+}     
+.bigPopUp header i:before {
+    vertical-align: -webkit-baseline-middle;
+}   
+.bigPopUp header ul {
+    padding: 0;
+    float: right;
+}
+.bigPopUp header ul li{
+    display: inline-block;
+    float: left;
+    margin: 0 5px;
+}
+
+/* Left Blcok */
+
+.leftBlock {
+    width: 300px;
+    display: inline-block;
+    float: left;
+    background: #ffffff;
+}
+.leftBlock.hide {
+    width: 56px;
+}
+.leftBlock.hide .toggleBlock {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    transition: transform .3s ease;
+}
+.leftBlock.hide section {
+    display: none;
+}
+.leftBlock.hide header i {
+    display: none;
+}
+.leftBlock.hide header i:last-child {
+    display: inline-block;
+}
+.leftBlock header {
+    background: #fafbfc;
+}
+.leftBlock header i {
+    font-size: 20px;
+    text-align: center;
+    color: #c1dced;
+}
+.leftBlock header i:hover {
+    filter: contrast(0.9)
+}  
+.leftBlock header i:before {
+    vertical-align: middle;
+}  
+.leftBlock header i.active {
+    color: #2196F3;
+}
+.contentBlock header i:hover {
+    color: #c1dced;
+}  
+.leftBlock header i.toggleBlock {
+    float: right;
+    transition: transform .3s ease;
+}
+.leftBlock header i.toggleBlock {
+    
+}
+.leftBlock.hide header i.toggleBlock {
+    color: #2196F3;
+}
+.filters {
+    padding: 15px;
+}
+button.filter {
+    width: 40px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+button.filter i:before {
+    font-size: 12px;
+}
+.filterInput {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+.cardList, .tableList {
+    padding: 0 15px;
+}
+.cardList h4, .rightBlock h4, .tableList h4 {
+    border-bottom: 1px solid #e1eef6;
+    padding: 8px;
+    margin:  10px 0;
+}
+.cardList ul, .tableList ul {
+    padding: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+.tableList ul li {
+    background: #fafbfc;
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+    font-size: 80%;
+    text-align: left;
+    border-radius: 5px;
+    vertical-align: top;
+    cursor: hand;
+    cursor: pointer;
+    position: relative;
+}
+.cardList ul li {
+    background: #fafbfc;
+    padding: 15px 10px 10px 10px;
+    margin: 5px;
+    height: 110px;
+    width: calc(50% - 13px);
+    font-size: 80%;
+    text-align: center;
+    border-radius: 5px;
+    vertical-align: top;
+    cursor: hand;
+    cursor: pointer;
+    position: relative;
+}
+.tableList ul li i.infoIcn {
+    color: #fafbfc;
+    font-size: 125%;
+    width: auto;
+    height: auto;
+    margin: 0;
+    position: absolute;
+    right: 15px;
+    top: 18px;
+}
+.cardList ul li i.infoIcn {
+    color: #fafbfc;
+    font-size: 125%;
+    width: auto;
+    height: auto;
+    margin: 0;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+.cardList ul li:hover i.infoIcn {
+    color: #ffffff !important;
+}
+.tableList ul li span {
+    display: inline-block;
+    vertical-align: inherit;
+    line-height: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: calc(100% - 84px);
+}
+.cardList ul li span {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.tableList ul li i {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+    margin: 0 10px;
+}
+.cardList ul li i {
+    display: block;
+    height: 56px;
+    width: 56px;
+    font-size: 46px;
+    margin: 0 auto 10px auto;
+}
+.cardList ul li i:before {
+    vertical-align: middle;
+}
+.cardList ul li:hover i, .tableList ul li:hover i {
+    color: #ffffff;
+}
+.cardList ul li:hover, .tableList ul li:hover {
+    background: #0492f2;
+    color: #ffffff;
+}
+.itemsScroll {
+    overflow: auto;
+}
+
+/* Content  Blcok */
+
+.contentBlock {
+    width: calc(100% - 600px);
+    display: inline-block;
+    float: left;
+}  
+.contentBlock.wider {
+    width: calc(100% - 356px);
+    display: inline-block;
+    float: left;
+}  
+.contentBlock header {
+    background: #0492f2;
+    color: #ffffff;
+    font-weight: 600;
+}   
+.contentBlock header i {
+    font-size: 20px;
+    text-align: center;
+}     
+.contentBlock header i:before {
+    vertical-align: middle;
+}       
+.contentBlock header i:hover {
+    color: #c1dced;
+}  
+.contentBlock header span {
+    line-height: 30px;
+}
+.contentBlock header ul {
+    padding: 0;
+    float: right;
+}
+.contentBlock header ul li{
+    display: inline-block;
+    float: left;
+    margin: 0 5px;
+}
+.content {
+    padding: 15px; 
+}
+.content #dropArea {
+    background: #ffffff;
+    padding: 20px;
+    width: 100%;
+}
+.content section .editorWrapper {
+    padding: 15px;
+    border: 1px solid #c1dced;
+    margin-bottom: 10px;
+    position: relative;
+    cursor: hand;
+    cursor: pointer;
+}
+.content section .editorWrapper .fieldName {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 3px 12px;
+    font-size: 65%;
+    background: #c1dced;
+}
+.content section .editorWrapper:hover .fieldName {
+    background: #00c3b3;
+    color: #ffffff;
+}
+.content section .editorWrapper:hover, .content section .editorWrapper.ative {
+    border: 1px solid #00c3b3;
+}
+
+/* Right Blcok */
+
+.rightBlock {
+    width: 300px;
+    display: inline-block;
+    float: left;
+    background: #ffffff;
+}
+.rightBlock > header {
+    background: #0492f2;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 10px 0 0 0;
+    position: relative;
+}
+.rightBlock > header i {
+    font-size: 16px;
+    text-align: center;
+}     
+.rightBlock > header i:before {
+    vertical-align: middle;
+}       
+.rightBlock > header i:hover {
+    color: #c1dced;
+}  
+.rightBlock > header span {
+    line-height: 30px;
+}
+.rightBlock > header ul {
+    padding: 0;
+    z-index: 2;
+    overflow: auto;
+}
+.rightBlock > header ul li{
+    display: inline-block;
+    float: left;
+    line-height: 30px;
+    margin: 0;
+    padding: 0 5px;
+}
+.rightBlock > header ul li span{
+    padding: 0 10px;
+    line-height: 35px;
+}
+.rightBlock > header ul li.active {
+    background: #ffffff;
+    box-shadow: 2px -1px 5px rgba(0,0,0,0.3);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.rightBlock > header ul li.active, .rightBlock > header ul li.active i:before {
+    color: #4e5983;
+}
+.rightBlock > header .whiteDivider {
+    display: block;
+    width: 100%;
+    background: #ffffff;
+    height: 10px;
+    bottom: 0;
+    border-top: 2px solid #c3ddee;
+    margin-top: -3px;
+}
+.rightBlock section {
+    padding: 0 15px;
+}
+.rightBlock section .button {
+    width: 22%;
+    margin-left: 10px;
+}
+.rightBlock section .itemsScroll {
+
+}
+.rightBlock .itemsScroll ul li {
+    padding: 2px 0;
+    position: relative;
+}
+.rightBlock section i:before {
+    font-size: 14px;
+}
+.rightBlock .props i {
+    vertical-align: middle;
+}
+.buttonsGroup {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: flex-start;
+}
+.buttonsGroup li.single {
+    width: 22%;
+    margin: 1.5%;
+}
+.buttonsGroup li.double {
+    width: 47%;
+    margin: 1.5%;
+}
+.buttonsGroup li.triple {
+    width: 72%;
+    margin: 1.5%;
+}
+.buttonsGroup li.full {
+    width: 97%;
+    margin: 1.5%;
+}
+
+.overlayPopup {
+    height: 100%;
+}
+
+@media only screen and (min-width: 35em) {
+
+}
+
