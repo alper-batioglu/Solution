@@ -1,0 +1,30 @@
+{
+  "name": "blabla",
+  "version": "0.1.0",
+  "main": "./dist/main.js",
+  "scripts": {
+    "go": "npm link && npm run link && npm run build",
+    "goWatch": "npm link && npm run link && npm run buildWatch",
+    "link": "npm link dorynemo_shrimp && npm link dorynemo_dory && npm link dorynemo_nemo_compwrapper && npm link quick_qshell && npm link quick_websdk ",
+    "linkSelf": "npm link",
+    "build": "npm run removeDist && npm run standAlone",
+    "local_build": "npm run removeDist && webpack",
+    "removeDist": "rm -rf dist/*",
+    "buildWatch": "webpack --watch",
+    "test": "jest",
+    "standAlone": "npm run standAloneRemoveDist && echo webpack --config ./standAlone/webpack.standAlone.config.js && npm run copy",
+    "standAloneRemoveDist": "rm -rf standAlone/distStandAlone/*",
+    "standAloneWatch": "npm run standAloneRemoveDist && webpack --config ./standAlone/webpack.standAlone.config.js --watch",
+    "copy": "mkdirp standAlone/distStandAlone/server && mkdirp standAlone/distStandAlone/client/ && cp ./standAlone/test.html ./standAlone/distStandAlone/client/ && cp ./server/nanoServer.js ./standAlone/distStandAlone/server/ && echo cp ./node_modules/quick_websdk/dist/websdk.js ./standAlone/distStandAlone/client/websdk",
+    "start": "node ./standAlone/distStandAlone/server/nanoServer.js -p 3001 -r ./standAlone/distStandAlone/client -env local",
+    "dockerBuildContainer": "docker build -t standalone -f ./docker/standAlone.Dockerfile ./",
+    "dockerStartContainer": "docker run -p 3001:3001 standalone"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "mkdirp": "^1.0.4"
+  },
+  "files": [
+    "standAlone/distStandAlone"
+  ]
+}
