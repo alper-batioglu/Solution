@@ -6,6 +6,9 @@
         <div>git config http.sslVerify false</div>
         <h2>disable ssl without repo</h2>
         <div>GIT_SSL_NO_VERIFY=true git clone https://url</div>
+        <h2>Git remote url fix with username and pass</h2>
+        <div>git config --unset remote.origin.url</div>
+        <div>git config --add remote.origin.url https://&lt;user&gt;:&lt;pass&gt;@gitlab.softtech/ngsp-quick/web/qui.git</div>
         <h2>Git destroy a pushed and pulled commit (change history)</h2>
         <div>git reset --hard &lt;&lt;commitID to revert to&gt;&gt;</div>
         <div>make change</div>
