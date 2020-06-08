@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <h2>Init fn project</h2>
+        <div>fn init --runtime node &lt;Function name&gt;</div>
+        <h2>List fn contexts (for local fndemouser)</h2>
+        <div>fn list contexts</div>
+        <h2>Create App</h2>
+        <div>fn create app &lt;App Name&gt;</div>
+        <h2>List Apps</h2>
+        <div>fn list apps</div>
+        <h2>Deploy Function to App(create docker image and run container)</h2>
+        <div>fn --verbose deploy --app &lt;App Name&gt; --local</div>
+        <h2>List Functions deployed</h2>
+        <div>fn list functions &lt;App Name&gt;</div>
+        <h2>Invoke deployed Function</h2>
+        <div>fn invoke &lt;App Name&gt; &lt;Function name&gt;</div>
+        <h4>with params</h4>
+        <div>echo -n '&lt;JSON Data&gt;' | fn invoke &lt;App Name&gt; &lt;Function name&gt; --content-type application/json</div>
+        <h4>with curl</h4>
+        <div>curl -X "POST" -H "Content-Type: application/json" -d '&lt;JSON Data&gt;' &lt;Function URL&gt;</div>
+        <h2>get Function URL</h2>
+        <div>fn inspect function &lt;App Name&gt; &lt;Function name&gt;</div>
+        <h2>delete Function</h2>
+        <div>fn delete function &lt;App Name&gt; &lt;Function name&gt;</div>
+        <h2>delete App</h2>
+        <div>fn delete app &lt;App Name&gt;</div>
+
+
+
+      
+    </body>
+</html>
