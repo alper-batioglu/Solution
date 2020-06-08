@@ -33,7 +33,7 @@ itemHolder.AddItem(fnLockItem);
 itemHolder.AddItem(new Item("Docker cheet sheet", "./Docker/cheetsheet.html"));
 itemHolder.AddItem(new Item("Bash solutions", "./Bash/Bash.html"));
 itemHolder.AddItem(new Item("Git solutions", "./Git/Git.html"));
-itemHolder.AddItem(new Item("Fn Serverless solutions", "./fnserverless/fn.html"));
+itemHolder.AddItem(new Item("Fn Serverless solutions", "./FnServerless/fn.html"));
 
 document.body.appendChild( itemHolder.Render());
 
