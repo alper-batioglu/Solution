@@ -6,15 +6,16 @@
         <h2>List images</h2>
         <div>docker image ls</div>
         <h2>Remove image</h2>
-        <div>docker image rmi &lt;ImageID&gt;</div>
+        <div>docker image rmi &lt;Image ID&gt;</div>
+        <div>docker rmi $(docker images |grep '&lt;Image Name&gt;')</div>
         <h2>build image</h2>
-        <div>docker build -t &lt;ImageName&gt;</div>
-        <div>docker build -t &lt;ImageName&gt; -f &lt;DockerfilePath&gt; ./</div>
+        <div>docker build -t &lt;Image Name&gt;</div>
+        <div>docker build -t &lt;Image Name&gt; -f &lt;DockerfilePath&gt; ./</div>
         <h2>Start image</h2>
-        <div>docker start &lg;ImageID&gt;</div>
-        <div>docker run -p &lt;OutboundPort&gt;:&lt;InboundPort&gt; &lt;ImageName/ImageID&gt;</div>
+        <div>docker start &lg;Image ID&gt;</div>
+        <div>docker run -p &lt;OutboundPort&gt;:&lt;InboundPort&gt; &lt;Image Name/Image ID&gt;</div>
         <h2>Image contents</h2>
-        <div>docker run -it &lt;ImageID&gt; sh</div>
+        <div>docker run -it &lt;Image ID&gt; sh</div>
         <h1>Containers</h1>
         <h2>List Containers</h2>
         <div>docker container ls</div>
