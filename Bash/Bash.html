@@ -8,6 +8,7 @@
         <div>echo "-la" | xargs ls</div>
         <h2>delete files with extension excluding patern</h2>
         <div>find . -name "*.js"  -printf "%p\n" | grep -v node_modules | xargs rm</div>
-        
+        <h2>list symbolic links</h2>
+        <div>ls -la  | grep "\->"</div>
     </body>
 </html>
