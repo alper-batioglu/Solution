@@ -53,7 +53,7 @@ var ItemHolder = /** @class */ (function () {
     return ItemHolder;
 }());
 var itemHolder = new ItemHolder();
-var fnLockItem = new Item("FN lock with MS Remote desktop client", "./Mac/mac.html");
+var fnLockItem = new Item("Mac solutions", "./Mac/mac.html");
 itemHolder.AddItem(fnLockItem);
 itemHolder.AddItem(new Item("Docker cheet sheet", "./Docker/cheetsheet.html"));
 itemHolder.AddItem(new Item("Bash solutions", "./Bash/Bash.html"));
