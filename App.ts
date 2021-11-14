@@ -28,7 +28,7 @@ class ItemHolder{
 
 const itemHolder:ItemHolder = new ItemHolder();
 
-const fnLockItem = new Item("FN lock with MS Remote desktop client", "./Mac/FnLock.html");
+const fnLockItem = new Item("Mac solutions", "./Mac/mac.html");
 itemHolder.AddItem(fnLockItem);
 itemHolder.AddItem(new Item("Docker cheet sheet", "./Docker/cheetsheet.html"));
 itemHolder.AddItem(new Item("Bash solutions", "./Bash/Bash.html"));
