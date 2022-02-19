@@ -15,8 +15,10 @@ var __rest = (this && this.__rest) || function (s, e) {
     for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
         t[p] = s[p];
     if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
     return t;
 };
 var _a;
@@ -71,7 +73,7 @@ var Writer = /** @class */ (function () {
     Writer.prototype.AllLog = function () {
         this.items.forEach(function (item, index) {
             var div = document.createElement("div");
-            div.innerText = index + ")" + item;
+            div.innerText = "".concat(index, ")").concat(item);
             document.body.appendChild(div);
         });
     };
@@ -115,11 +117,11 @@ for (var i = 0; i < 10; i++) {
 }
 var _b = [1, 2], first = _b[0], second = _b[1];
 _a = [second, first], first = _a[0], second = _a[1];
-writer.Log("first:" + first + " second:" + second + " ");
+writer.Log("first:".concat(first, " second:").concat(second, " "));
 var _c = [1, 2, 3, 4, 5], f1 = _c[0], f2 = _c[1], frest = _c.slice(2);
-writer.Log("f1:" + f1 + " f2:" + f2 + " fr:" + frest);
+writer.Log("f1:".concat(f1, " f2:").concat(f2, " fr:").concat(frest));
 var _d = { a1: 5, a2: 6, a3: 7, a4: 5, a5: 6 }, a1 = _d.a1, a2 = _d.a2, a3 = _d.a3, arest = __rest(_d, ["a1", "a2", "a3"]);
-writer.Log("a1:" + a1 + " a2:" + a2 + " a3:" + a3 + " arest:" + JSON.stringify(arest));
+writer.Log("a1:".concat(a1, " a2:").concat(a2, " a3:").concat(a3, " arest:").concat(JSON.stringify(arest)));
 function test2(_a) {
     var _b = _a === void 0 ? {} : _a, _c = _b.count, count = _c === void 0 ? 0 : _c, _d = _b.name, name = _d === void 0 ? "empty" : _d;
     writer.Log(count + "-" + name);
@@ -128,7 +130,7 @@ test2();
 test2({ count: 2 });
 test2({ count: 2, name: "alper" });
 var objects = { count: 5, name: "alper" };
-var datas = __assign({}, objects, { field1: "field" });
+var datas = __assign(__assign({}, objects), { field1: "field" });
 writer.Log(JSON.stringify(datas));
 ;
 function test3(data) {
