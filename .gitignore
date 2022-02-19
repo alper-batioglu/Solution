@@ -1,3 +1,4 @@
 node_modules/
 Docker/test/package-lock.json
 Docker/test/standAlone/distStandAlone
+dist
